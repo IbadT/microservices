@@ -1,10 +1,15 @@
+import { ProvidersModule } from 'libs/providers';
+import { SharedModule } from '@lib/shared';
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ChannelsModule } from './channels/channels.module';
+import { DomainsModule } from './domains/domains.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+      SharedModule, 
+      ProvidersModule, 
+      ChannelsModule, 
+      DomainsModule
+    ],
 })
 export class AppModule {}
